@@ -8,6 +8,7 @@
     "build": "tsc",
     "dev": "node --loader ts-node/esm src/bot.ts",
     "lint": "eslint --ext .js,.ts .",
+    "test": "node test/test-bot.js",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "dependencies": {
