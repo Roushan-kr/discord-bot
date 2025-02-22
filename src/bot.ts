@@ -20,8 +20,8 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
-  if (message.content === '!ping') {
-    message.reply('Pong! 🏓');
+  if (message.content.startsWith("hi "){
+    message.reply(`welcome ${message.author.globalName}, hope you takes your notes`)
   }
 });
 
