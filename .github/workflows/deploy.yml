@@ -19,6 +19,6 @@ jobs:
       - name: Build and Start Bot
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          NODE_ENV: ${{secrets.NODE_ENV}}
+          NODE_ENV: ${{ secrets.NODE_ENV || 'production' }}
         run: |
           npm run start
