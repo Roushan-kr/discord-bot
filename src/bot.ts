@@ -20,7 +20,7 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', (message) => {
-  if (message.content.startsWith("hi "){
+  if (message.content.startsWith("hi ")){
     message.reply(`welcome ${message.author.globalName}, hope you takes your notes`)
   }
 });

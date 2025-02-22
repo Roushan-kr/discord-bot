@@ -21,4 +21,4 @@ jobs:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           NODE_ENV: ${{ secrets.NODE_ENV || 'production' }}
         run: |
-          nohup npm run start
+           npm run test
