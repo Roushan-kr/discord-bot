@@ -4,9 +4,10 @@
   "type": "module",
   "main": "dist/bot.js",
   "scripts": {
-    "start": "nodemon dist/bot.js",
+    "start": "node dist/bot.js",
     "build": "tsc",
     "dev": "tsc --watch",
+    "dev1": "nodemon dist/bot.js",
     "lint": "eslint --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
