@@ -1,0 +1,28 @@
+# Ignore all files in node_modules
+node_modules/
+
+# Ignore build output directories
+dist/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore environment variable files
+.env
+.env.local
+
+# Ignore coverage output
+coverage/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore editor specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
