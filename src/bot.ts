@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ path: process.env.NODE_ENV === "production" ? ".env.production" : ".env" });
 
 const client = new Client({
   intents: [
