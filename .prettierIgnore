@@ -31,4 +31,4 @@ coverage/
 .gitignore
 *.config.js
 *.json
-.yml
+*.yml
