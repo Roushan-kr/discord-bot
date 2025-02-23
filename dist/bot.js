@@ -15,5 +15,5 @@ client.once('ready', async () => {
     }
 });
 client.on('messageCreate', handelClientMsg);
-client.on('interactionCreate', handelInteraction);
+client.on("interactionCreate", handelInteraction);
 client.login(process.env.DISCORD_TOKEN);
