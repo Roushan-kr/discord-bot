@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from 'discord.js';
 import { envVariables } from '../dist/utils/config.js';
 
-const env = envVariables()
+const env = envVariables();
 Object.keys(env).forEach((k) => {
   if (!env[k]) {
     console.error(`ERROR: ${k} is missing!`);

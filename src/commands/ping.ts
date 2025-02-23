@@ -1,4 +1,8 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
+import {
+  ChatInputCommandInteraction,
+  MessageFlags,
+  SlashCommandBuilder,
+} from 'discord.js';
 import axios from 'axios';
 import { PingReply } from '../utils/format.js';
 
@@ -10,7 +14,7 @@ export const pingCommand = new SlashCommandBuilder()
   );
 
 export async function pingExecute(interaction: ChatInputCommandInteraction) {
-  await interaction.deferReply(); // Bot shows "thinking..." while fetching data
+  await interaction.deferReply({ flags: MessageFlags.Ephemeral }); // Bot shows "thinking..." while fetching data
 
   const userIP = interaction.options.getString('ip', true); // Get user-provided IP
   const token = process.env.IPINFO_TOKEN; // Load API key
