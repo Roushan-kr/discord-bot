@@ -6,7 +6,7 @@ import eslintPluginPrettierRecommended from 'eslint-config-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
+  { files: ['**/*.{ts}'] },
   // {
   //   plugins: {
   //     jsdoc: jsdoc,

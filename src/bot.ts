@@ -1,28 +1,24 @@
-import { Client, GatewayIntentBits } from 'discord.js';
 import dotenv from 'dotenv';
+import { client, registerCommands } from './client.js';
+import { handelClientMsg } from './events/message.js';
+import { handelInteraction,  } from './events/interaction.js';
 
-dotenv.config({ path: process.env.NODE_ENV === "production" ? ".env.production" : ".env" });
-
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
-  ],
+dotenv.config({
+  path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env',
 });
 
-client.once('ready', () => {
+client.once('ready', async () => {
   if (client.user) {
-    console.log(`🤖 Bot is online as ${client.user.tag}`);
+    console.log(`Bot is online as ${client.user.tag}`);
+    await registerCommands();
   } else {
-    console.log('🤖 Bot is online, but user is not available.');
+    console.log('Bot is online, but user is not available.');
   }
 });
 
-client.on('messageCreate', (message) => {
-  if (message.content.startsWith("hi ")){
-    message.reply(`welcome ${message.author.globalName}, hope you takes your notes`)
-  }
-});
+client.on('messageCreate', handelClientMsg);
+
+client.on("interactionCreate", handelInteraction);
+
 
 client.login(process.env.DISCORD_TOKEN);
