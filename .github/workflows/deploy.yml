@@ -20,6 +20,10 @@ jobs:
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           NODE_ENV: ${{ secrets.NODE_ENV || 'production' }}
+          APP_ID: ${{secrets.APP_ID}}
+          PUBLIC_KEY: ${{secrets.PUBLIC_KEY}}
+          IPINFO_TOKEN: ${{secrets.IPINFO_TOKEN}}
+          CLIENT_ID: ${{secrets.CLIENT_ID}}
         run: |
           npm run build
           npm run test
