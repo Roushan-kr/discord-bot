@@ -17,8 +17,8 @@ export const sendBulkEmail = async (
       subject: subject || 'Important Notification',
       html: `<p>${message}</p>`,
     });
-    console.log("Bulk mail log: ", data)
-    console.log("Bulk mail log error: ", error)
+    console.log('Bulk mail log: ', data);
+    console.log('Bulk mail log error: ', error);
   } catch (error) {
     console.error('❌ Error sending bulk email:', error);
   }
