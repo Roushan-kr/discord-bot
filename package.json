@@ -4,10 +4,10 @@
   "type": "module",
   "main": "dist/bot.js",
   "scripts": {
-    "start": "node dist/bot.js",
+    "start": "tsc && node dist/bot.js",
     "build": "tsc",
     "dev": "node --loader ts-node/esm --watch src/bot.ts",
-    "lint": "eslint --ext .ts .",
+    "lint": "eslint --ext .ts . --fix",
     "test": "node test/test-bot.js",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
