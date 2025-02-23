@@ -15,7 +15,7 @@ const envVariables = () => {
   };
 
   Object.freeze(envVariables);
-  return envVariables
+  return envVariables;
 };
 
 export { envVariables };
