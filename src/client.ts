@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits, REST, Routes } from 'discord.js';
-import { pingCommand } from './commands/index.js';
+import { pingCommand, sendEmailCommand } from './commands/index.js';
 
 export const client = new Client({
   intents: [
@@ -10,7 +10,7 @@ export const client = new Client({
 });
 
 export async function registerCommands() {
-  const commands = [pingCommand.toJSON()];
+  const commands = [pingCommand.toJSON(), sendEmailCommand.toJSON()];
   const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);
   try {
     console.log('🔄 Registering slash commands...');

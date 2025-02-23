@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { client, registerCommands } from './client.js';
 import { handelClientMsg } from './events/message.js';
-import { handelInteraction,  } from './events/interaction.js';
+import { handleInteraction } from './events/interaction.js';
 
 dotenv.config({
   path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env',
@@ -18,7 +18,6 @@ client.once('ready', async () => {
 
 client.on('messageCreate', handelClientMsg);
 
-client.on("interactionCreate", handelInteraction);
-
+client.on('interactionCreate', handleInteraction);
 
 client.login(process.env.DISCORD_TOKEN);

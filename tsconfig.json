@@ -9,8 +9,6 @@
     "noImplicitAny": true,
     "moduleResolution": "node16"
   },
-  "include": [
-    "./src/**/*"
-  ], // which files to compile
+  "include": ["./src/**/*"], // which files to compile
   "exclude": ["node_modules"] // which files to skip
 }
