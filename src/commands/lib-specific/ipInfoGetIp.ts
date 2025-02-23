@@ -1,4 +1,4 @@
-import { IPinfoWrapper } from "node-ipinfo";
+import { IPinfoWrapper } from 'node-ipinfo';
 
 const ipinfo = new IPinfoWrapper(process.env.IPINFO_TOKEN);
 
@@ -8,7 +8,7 @@ export const fetchIPInfo = async (ip: string) => {
     const data = await ipinfo.lookupIp(ip);
     return data;
   } catch (error) {
-    console.error("Error fetching IP info:", error);
+    console.error('Error fetching IP info:', error);
     return null;
   }
 };

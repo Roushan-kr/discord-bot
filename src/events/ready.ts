@@ -1,7 +1,7 @@
-import { Client } from "discord.js";
+import { Client } from 'discord.js';
 
 export default (bot: Client) => {
-  bot.once("ready", () => {
+  bot.once('ready', () => {
     console.log(`🤖 Bot is online as ${bot.user?.tag}`);
   });
 };
