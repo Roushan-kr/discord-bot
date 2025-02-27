@@ -33,6 +33,14 @@ export async function chatMe(interaction: ChatInputCommandInteraction) {
         typeof chunk === 'string' ? chunk : new TextDecoder().decode(chunk);
       if (!chunkStr.trim()) continue; // Skip empty chunks
 
+      try {
+        const parsed = JSON.parse(chunkStr);
+        console.log(parsed);
+        
+        if (parsed.requestBody) response += parsed.requestBody.json.content;
+      } catch {
+        response += chunkStr;
+      }
       if (response.length + chunkStr.length > 1900) {
         await interaction.followUp({
           content: response,
