@@ -1,6 +1,5 @@
 import { CacheType, Interaction } from 'discord.js';
-import { pingExecute } from '../commands/ping.js';
-import { sendEmailViaExcel } from '../commands/send.js';
+import { pingExecute, sendEmailViaExcel, chatMe } from '../commands/index.js';
 
 export async function handleInteraction(interaction: Interaction<CacheType>) {
   if (!interaction.isChatInputCommand()) return;
@@ -11,5 +10,9 @@ export async function handleInteraction(interaction: Interaction<CacheType>) {
 
   if (interaction.commandName === 'send') {
     await sendEmailViaExcel(interaction);
+  }
+
+  if (interaction.commandName === 'chatme') {
+    await chatMe(interaction);
   }
 }
